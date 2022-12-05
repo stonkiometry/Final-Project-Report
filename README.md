@@ -2,6 +2,13 @@
 ## Proposal
 We wish to use microcontrollers to control a chemical reaction. As an example we have chosen Titration. This is mainly because this is a slightly less complicated chemical reaction, with a stable endpoint following which no reaction will occur. The link to our complete proposal: https://github.com/harishramesh98/Project_Team_Stonkiometry/blob/7acee29b5e772328fcbecf8f17a8a46d4d0e9c68/Proposal/ESE_5190_PROJECT_PROPOSAL_TEAM_STONKIOMETRY.pdf
 
+## Functionality to be implemented as a part of the proposal
+Primary Objectives:
+- Firstly we want to be able to sense the color change.
+- We want to be able to rotate open and close the burette's knob.
+Secondary objectives:
+- Automate reading the amount of liquid dispensed by the burette.
+
 ## Components used:
 ### 1. RP2040
 <img src=https://user-images.githubusercontent.com/38978733/205590895-fba17c42-1fa2-400a-8e27-4175002fcc75.jpg width="200" height="200"/> <img src=https://user-images.githubusercontent.com/38978733/205590897-ba245065-50f3-4131-baf4-95f8df0171a4.jpg width="200" height="200"/><br>
@@ -25,11 +32,15 @@ We have ordered the NEMA-17 stepper motor and corresponding motor driver because
 
 ## Midpoint outputs:
 - The APDS9960 is used to sense the color change. Since we mainly expect to use phenopthalein, the solution is expected to turn pink. So we pay extra attention to the rval and bval stored in the color data register. While the code has been written to account for the color vanishing when the end-point has not been reached, due to time constraints the demo only shows a situation with a persistent pink color.
+
 https://user-images.githubusercontent.com/38978733/205597049-97f19b58-5c57-406a-bf03-e7bdcf53fbaa.mp4
+
 - The motor has been designed to open only slightly before closing. This functionality can be seen in the video.
+
 https://user-images.githubusercontent.com/38978733/205597223-51e67dcd-fb41-46d8-ad68-22e2b736a537.mp4
 
-
-
-
 ## Issues faced and potential fixes:
+- Our initial proposal involved using the camera on the Pico4ML. This was complicated mainly because this would require implementing a base level of computer vision as well as it might have delays and overheads associated with processing. We decided to use the APDS9960 instead to sense the color change. As it uses I2C the programming is pretty lightweight and fast. 
+- Since we are using the sensitive APDS9960 to sense color, we need to isolate it. We could facilitate this using a structure like a shoebox to isolate the beaker. However, this also requires to illuminate the beaker inside with some mild lighting. This could be done using a white LED and a translucent screen.
+- Right now our code is built on two seperate microcontrollers. Daisy-chaining them is a possibility, however, for both speed and ease of programming, it is preferable if the same board handled both functions.
+- The endpoint that stops the program execution is something that requires experimentation. In our case a lot of the arbitrary limits we have decided requires some experimentation to tune and fix. This in turn requires time.

@@ -22,6 +22,8 @@ We have used the APDS9960 to sense the color change when the end point is reache
 We have ordered the NEMA-17 stepper motor and corresponding motor driver because of its high speed and torque. However, due to logistical delays, we have experimented with the parallax servo motor.  
 
 ## Progress:
+- We are using the APDS9960 to sense the color change when the reaction has completed. To set this up we used the i2c_bus_scan code from the pico_examples as a reference. In order to compare current data and previous data, we have set up structures, variables and counters to emulate a ring buffer. This setup constantly maintains track of the color it senses. Program is exited when the endpoint is reached. This is setup with the logic that the color will persist when the end-point is reached. PIO has been used in the implementation. The APDS9960 interfaces with the RP2040 using I2C.
+- The servo motor has been set up to open slightly and close immediately so as to allow a small amount of reagent in. This needed setting up PWM. So we referred to PWM in pico_examples as well as a few codes online (mainly https://github.com/metanav/pico_servo_pio). PIO has been used in this implementation. 
 
 ## Midpoint outputs:
 

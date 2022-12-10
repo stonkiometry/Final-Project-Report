@@ -44,3 +44,8 @@ https://user-images.githubusercontent.com/38978733/205597223-51e67dcd-fb41-46d8-
 - Since we are using the sensitive APDS9960 to sense color, we need to isolate it. We could facilitate this using a structure like a shoebox to isolate the beaker. However, this also requires to illuminate the beaker inside with some mild lighting. This could be done using a white LED and a translucent screen.
 - Right now our code is built on two seperate microcontrollers. Daisy-chaining them is a possibility, however, for both speed and ease of programming, it is preferable if the same board handled both functions.
 - The endpoint that stops the program execution is something that requires experimentation. In our case a lot of the arbitrary limits we have decided requires some experimentation to tune and fix. This in turn requires time.
+
+## Progress as of 10-December-2022
+- We have combined both functionalities to work on a single RP2040 QtPy board, using 2 PIOs and state machines. We have been able to trigger a lighter servo motor, however we need to be able to trigger a heavier servo motor, and the power source we used (a power bank) gave insufficient current to drive the heavier servo. However, as the PWM implemented is the same, once scaled, we can expect similar response. We have ideated different ideas to couple the motor to the burette. We also need to work on testing and tuning the parameters involved for color change.
+https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-afe8-85a7afe7959d.mp4
+

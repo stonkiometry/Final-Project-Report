@@ -52,5 +52,7 @@ https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-
 
 ## Progress as of 10-December-2022
 - Coupling with Burette achieved. Able to modulate the pulse width, triggered using the PIO on the RP2040 QtPy, to precisely control the knob on the burette to allow measured amount of liquid through the burette.
+
 ![][https://github.com/harishramesh98/Project_Team_Stonkiometry/blob/a6f44f397fdeb8a0a89d155b8089a7bd66b511cb/Outputs/regulating_burette.gif]
+
 - Minor setback with the APDS Sensor. With the actual reaction, that we set up manually to see the expected color values, we noticed because of the way the base example code was written, accessing the APDS registers made it so that the outputs were in multiples of 512. This made it hard to differentiate between the expected Red, Blue and Green values in the registers. While the APDS is very sensitive and has a wide range of detection, it does not show enogh variation for the pale color that the titration reaction produces. As a work around, we could rewrite the logic to work with smaller changes, however this could give non-deterministic performance. We could use a seperate board for sensing color and maybe run that board on python as it seems easier to read the APDS using circuit python. We could also look into other sensors.

@@ -241,7 +241,7 @@ int main() {
                 color_change_count+=1;
                 printf("Color change count: %d\n",color_change_count);
                 if(color_change_count>=4){
-                    printf("Reaction Over Fucker.\n");
+                    printf("Reaction Khatham.\n");
                     //printf("Time Taken (estimate):%d seconds.\n",reaction_count*2+2);
                     break;
                 }

@@ -56,3 +56,34 @@ https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-
 ![](https://github.com/harishramesh98/Project_Team_Stonkiometry/blob/a6f44f397fdeb8a0a89d155b8089a7bd66b511cb/Outputs/regulating_burette.gif)
 
 - Minor setback with the APDS Sensor. With the actual reaction, that we set up manually to see the expected color values, we noticed because of the way the base example code was written, accessing the APDS registers made it so that the outputs were in multiples of 512. This made it hard to differentiate between the expected Red, Blue and Green values in the registers. While the APDS is very sensitive and has a wide range of detection, it does not show enogh variation for the pale color that the titration reaction produces. As a work around, we could rewrite the logic to work with smaller changes, however this could give non-deterministic performance. We could use a seperate board for sensing color and maybe run that board on python as it seems easier to read the APDS using circuit python. We could also look into other sensors.
+
+## Progress as of 13-December-2022 - COMPLETED
+- We incrementally tested and made changes to our program until we reached desired results. Our initial algorithm did not produce the results we needed. We went back to the drawing board and rewrote a new algorithm that we had to debug and make changes as we went. Without going too much into details, we emulated a ring buffer again, but this time we collected extensive data with how the APDS interacted with the colors we expected and strong light sources. After tabulating this in excel and generating graphs we began noticing patterns that we needed to account for and fine-tune our program.  
+
+- Data Observed for red color without indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207529740-c30cad27-eb86-4527-aa76-047bdf6e0423.png)
+
+- Data observed for green color without indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207529758-e9c1ee34-2722-4224-ac29-7e1a1c5e9989.png)
+
+- Data observed for blue color without indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207529777-4ae29922-43a9-4a90-83c7-611474e8a3e5.png)
+
+- Data Observed for red color with indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207528997-535744e1-7ca0-44c7-ad19-3a095f8f53e2.png)
+
+- Data observed for green color with indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207529289-cfb5a315-372f-4f0a-ab65-10778c363aea.png)
+
+- Data observed for blue color with indicator
+
+![image](https://user-images.githubusercontent.com/38978733/207529589-c66b046a-30eb-4610-b4d3-2e9c79472024.png)
+
+- 
+
+

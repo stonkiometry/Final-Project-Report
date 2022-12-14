@@ -89,7 +89,7 @@ https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-
 https://user-images.githubusercontent.com/38978733/207530449-560fe1e3-226e-4f51-8345-2b5921903796.mp4
 
 - After achieving consistency with the Mountain Dew setup we shifted to the actual reaction.
-- The chemical reaction we selected was dilute Citric Acid (C₆H₈O₇) as the acid, dilute Sodium Hydroxide (NaOH) as the base and Phenopthalein as the indicator. This is a somewhat safer reaction to perform outside the safety of a proper laboratory. Their concentrations were 0.01M and 0.1 M respectively. After some fine-tuning and testing we achieved desired results. We had to again modify our code for this purpose, a significant change we made here is to stop the motor when it observes a minor color change and check if the color settles before triggerring the motor again. Eventually we got the RP2040 to perform as we needed it to.
+- The chemical reaction we selected was dilute Citric Acid (C₆H₈O₇) as the acid, dilute Sodium Hydroxide (NaOH) as the base and Phenopthalein as the indicator. This is a somewhat safer reaction to perform outside the safety of a proper laboratory. Their concentrations were 0.04M and 0.1 M respectively. After some fine-tuning and testing we achieved desired results. We had to again modify our code for this purpose, a significant change we made here is to stop the motor when it observes a minor color change and check if the color settles before triggerring the motor again. Eventually we got the RP2040 to perform as we needed it to.
 
 https://user-images.githubusercontent.com/38978733/207533187-27a5dd1e-8c87-4e49-8192-064fa27a3baa.mp4
 

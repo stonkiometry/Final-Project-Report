@@ -33,7 +33,7 @@ For titration, our primary component from the kit is te burette, whose know allo
 We have used the APDS9960 to sense the color change when the end point is reached.
 
 ### 4. Motor
-![image](https://user-images.githubusercontent.com/38978733/205590891-829168b6-fec8-4414-88bb-cd8fe5db12ed.jpg)
+![image](https://user-images.githubusercontent.com/38978733/205590889-bc8f02c8-7277-463e-8a5d-1f99b7c407ce.jpg)
 We had ordered the NEMA-17 stepper motor and corresponding motor driver because of its high speed and torque. However, due to logistical delays, we have experimented with the parallax servo motor.  
 
 ## Progress:

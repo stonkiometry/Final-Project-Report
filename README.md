@@ -2,6 +2,8 @@
 ## Proposal
 We wish to use microcontrollers to control a chemical reaction. As an example we have chosen Titration. This is mainly because this is a slightly less complicated chemical reaction, with a stable endpoint following which no reaction will occur. The link to our complete proposal: [Team_Proposal.pdf](https://github.com/harishramesh98/Project_Team_Stonkiometry/blob/7acee29b5e772328fcbecf8f17a8a46d4d0e9c68/Proposal/ESE_5190_PROJECT_PROPOSAL_TEAM_STONKIOMETRY.pdf)
 
+Our Result : [![Final Output](https://i.ytimg.com/vi/uNyA_uMM8rk/hqdefault.jpg)](https://youtu.be/uNyA_uMM8rk "Final Output")
+
 ## Functionality to be implemented as a part of the proposal
 Primary Objectives:
 - Firstly we want to be able to sense the color change.
@@ -33,11 +35,11 @@ We had ordered the NEMA-17 stepper motor and corresponding motor driver because 
 ## Midpoint outputs:
 - The APDS9960 is used to sense the color change. Since we mainly expect to use phenopthalein, the solution is expected to turn pink. So we pay extra attention to the rval and bval stored in the color data register. While the code has been written to account for the color vanishing when the end-point has not been reached, due to time constraints the demo only shows a situation with a persistent pink color.
 
-https://user-images.githubusercontent.com/38978733/205597049-97f19b58-5c57-406a-bf03-e7bdcf53fbaa.mp4
+[![JustAPDS](https://res.cloudinary.com/marcomontalbano/image/upload/v1672446811/video_to_markdown/images/youtube--ksuHuA3v_wM-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/ksuHuA3v_wM "JustAPDS")
 
 - The motor has been designed to open only slightly before closing. This functionality can be seen in the video.
 
-https://user-images.githubusercontent.com/38978733/205597223-51e67dcd-fb41-46d8-ad68-22e2b736a537.mp4
+[![Just Servo](https://res.cloudinary.com/marcomontalbano/image/upload/v1672447051/video_to_markdown/images/youtube--b4WSYsbX98U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/b4WSYsbX98U "Just Servo")
 
 ## Issues faced and potential fixes:
 - Our initial proposal involved using the camera on the Pico4ML. This was complicated mainly because this would require implementing a base level of computer vision as well as it might have delays and overheads associated with processing. We decided to use the APDS9960 instead to sense the color change. As it uses I2C the programming is pretty lightweight and fast. 
@@ -48,7 +50,7 @@ https://user-images.githubusercontent.com/38978733/205597223-51e67dcd-fb41-46d8-
 ## Progress as of 9-December-2022
 - We have combined both functionalities to work on a single RP2040 QtPy board, using 2 PIOs and state machines. We have been able to trigger a lighter servo motor, however we need to be able to trigger a heavier servo motor, and the power source we used (a power bank) gave insufficient current to drive the heavier servo. However, as the PWM implemented is the same, once scaled, we can expect similar response. We have ideated different ideas to couple the motor to the burette. We also need to work on testing and tuning the parameters involved for color change.
 
-https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-afe8-85a7afe7959d.mp4
+[![Both working Together](https://res.cloudinary.com/marcomontalbano/image/upload/v1672447099/video_to_markdown/images/youtube--kvPNIWoTFEg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/kvPNIWoTFEg "Both working Together")
 
 ## Progress as of 10-December-2022
 - Coupling with Burette achieved. Able to modulate the pulse width, triggered using the PIO on the RP2040 QtPy, to precisely control the knob on the burette to allow measured amount of liquid through the burette.
@@ -86,12 +88,12 @@ https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-
 
 - With this data after rewriting our code and logic we realized we needed a much stronger power source and that we needed the APDS to settle for some time with the light source before it can detect some change in the color. For this purpose we simply added a 10 second long delay after the APDS is configured before the start of the reaction. After making relevant changes we tested it incrementally using basic colored paper and seeing how it interacted. Once we achieved some consistent outputs we tested with water and introduced color with a colored liquid. For our tests we used some leftover Mountain Dew.
 
-https://user-images.githubusercontent.com/38978733/207530449-560fe1e3-226e-4f51-8345-2b5921903796.mp4
+[![Trial with mountain dew](https://res.cloudinary.com/marcomontalbano/image/upload/v1672447172/video_to_markdown/images/youtube--7M5td8tMtU4-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/7M5td8tMtU4 "Trial with mountain dew")
 
 - After achieving consistency with the Mountain Dew setup we shifted to the actual reaction.
 - The chemical reaction we selected was dilute Citric Acid (C₆H₈O₇) as the acid, dilute Sodium Hydroxide (NaOH) as the base and Phenopthalein as the indicator. This is a somewhat safer reaction to perform outside the safety of a proper laboratory. Their concentrations were 0.04M and 0.1 M respectively. After some fine-tuning and testing we achieved desired results. We had to again modify our code for this purpose, a significant change we made here is to stop the motor when it observes a minor color change and check if the color settles before triggerring the motor again. Eventually we got the RP2040 to perform as we needed it to.
 
-https://user-images.githubusercontent.com/38978733/207533187-27a5dd1e-8c87-4e49-8192-064fa27a3baa.mp4
+[![Final Output](https://res.cloudinary.com/marcomontalbano/image/upload/v1672447203/video_to_markdown/images/youtube--uNyA_uMM8rk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/uNyA_uMM8rk "Final Output")
 
 # Conclusion
 We have automated and controlled titration of Citric acid against Sodium Hydroxide. Considering our program, it can detect most color changes, however it does have it flaws. We used a magnetic stirrer so that the color settles or dissipates faster. It also needs an appreciable difference in the color that the solution turns to. For future scope we could add a stopwatch or timer to measure the duration of the reaction. Considering the large amount of distance the liquid drawn creates on the burette, we dropped our initial idea to photograph the start and end-points. We can implement temperature sensing and controlling more complex reactions. As it stands we have implemented controlling a burette and sensing color. Both these functionalities are implemented with PIO in the RP2040 QtPy.

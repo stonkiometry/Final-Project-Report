@@ -4,6 +4,8 @@ We wish to use microcontrollers to control a chemical reaction. As an example we
 
 Our Result : [![Final Output](https://i.ytimg.com/vi/uNyA_uMM8rk/hqdefault.jpg)](https://youtu.be/uNyA_uMM8rk "Final Output")
 
+      Note: for videos, Please open in new tab for ease of viewing, as youtube content.
+
 ## Functionality to be implemented as a part of the proposal
 Primary Objectives:
 - Firstly we want to be able to sense the color change.

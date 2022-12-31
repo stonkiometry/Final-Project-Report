@@ -86,7 +86,7 @@ https://user-images.githubusercontent.com/38978733/206837550-ae40caa8-ad9f-41df-
 
 - With this data after rewriting our code and logic we realized we needed a much stronger power source and that we needed the APDS to settle for some time with the light source before it can detect some change in the color. For this purpose we simply added a 10 second long delay after the APDS is configured before the start of the reaction. After making relevant changes we tested it incrementally using basic colored paper and seeing how it interacted. Once we achieved some consistent outputs we tested with water and introduced color with a colored liquid. For our tests we used some leftover Mountain Dew.
 
-![image](https://user-images.githubusercontent.com/38978733/207530449-560fe1e3-226e-4f51-8345-2b5921903796.mp4)
+![video](https://user-images.githubusercontent.com/38978733/207530449-560fe1e3-226e-4f51-8345-2b5921903796.mp4)
 
 - After achieving consistency with the Mountain Dew setup we shifted to the actual reaction.
 - The chemical reaction we selected was dilute Citric Acid (C₆H₈O₇) as the acid, dilute Sodium Hydroxide (NaOH) as the base and Phenopthalein as the indicator. This is a somewhat safer reaction to perform outside the safety of a proper laboratory. Their concentrations were 0.04M and 0.1 M respectively. After some fine-tuning and testing we achieved desired results. We had to again modify our code for this purpose, a significant change we made here is to stop the motor when it observes a minor color change and check if the color settles before triggerring the motor again. Eventually we got the RP2040 to perform as we needed it to.

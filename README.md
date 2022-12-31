@@ -1,5 +1,6 @@
 # Microcontroller controlled chemical reactions - Titration
-![image ](https://github.com/stonkiometry/Final-Project-Report/blob/99cf97166dbac51c14174fcfc276ff6ccb5da977/Outputs/Team-Stonkiometry-Presents.jpg)
+![Team-Stonkiometry-Presents](https://user-images.githubusercontent.com/113575268/210120489-5a118584-9992-4c1a-9198-23c2944533b1.jpg)
+
 
 ## Proposal
 We wish to use microcontrollers to control a chemical reaction. As an example we have chosen Titration. This is mainly because this is a slightly less complicated chemical reaction, with a stable endpoint following which no reaction will occur. The link to our complete proposal: [Team_Proposal.pdf](https://github.com/harishramesh98/Project_Team_Stonkiometry/blob/7acee29b5e772328fcbecf8f17a8a46d4d0e9c68/Proposal/ESE_5190_PROJECT_PROPOSAL_TEAM_STONKIOMETRY.pdf)
